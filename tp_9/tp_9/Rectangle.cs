@@ -47,7 +47,13 @@ namespace tp_9
             this.rightTop.setY(this.rightTop.getY() + _step);
         }
 
-        
-        
+        public override string ToString()
+        {
+            return String.Concat(
+                "((", this.leftBottom.getX().ToString(),
+                ",", this.leftBottom.getY().ToString(),
+                "),(", this.rightTop.getX().ToString(),
+                ",", this.rightTop.getY().ToString(),"))");
+        }
     }
 }
