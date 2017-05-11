@@ -18,27 +18,36 @@ namespace tp_9
         осям на заданное расстояние DELTA и вычислить периметр
         прямоугольника после сдвига угла.
     */
-    class Point
+    class Rectangle
     {
-        private double x;
-        private double y;
+        private Point leftBottom;
+        private Point rightTop;
 
-        public Point(double _x, double _y)
+        public Rectangle(Point _p1, Point _p2)
         {
-            this.setX(_x);
-            this.setY(_y);
+            this.setLeftBottom(_p1);
+            this.setRightTop(_p2);
         }
 
-        public Point(Point _p)
+        private void setLeftBottom(Point _p1)
         {
-            this.setX(_p.getX());
-            this.setY(_p.getY());
+            this.leftBottom = new Point(_p1);
         }
 
-        public double getX() { return x; }
-        public double getY() { return y; }
+        private void setRightTop(Point _p2)
+        {
+            this.rightTop = new Point(_p2);
+        }
 
-        public void setX(double _x) { this.x = _x; }
-        public void setY(double _y) { this.y = _y; }
+        public void moveRectangle(double _step)
+        {
+            this.leftBottom.setX(this.leftBottom.getX() + _step);
+            this.leftBottom.setY(this.leftBottom.getY() + _step);
+            this.rightTop.setX(this.rightTop.getX() + _step);
+            this.rightTop.setY(this.rightTop.getY() + _step);
+        }
+
+        
+        
     }
 }
